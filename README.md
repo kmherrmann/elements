@@ -1,11 +1,15 @@
 # Ory Elements
 
-Ory component library for custom UI integration and development. A set of tools
+An extensive component library for custom UI integration and development with
+[Ory Network](https://www.ory.sh/cloud/) and
+[Ory Self-hosted](https://github.com/ory) with full support for the React
+ecosystem.
 
-Here we are using [Vite](https://vitejs.dev/) as the bundler instead of only
-Rollup. This makes the bundling experience a bit easier and really fast! We can
-now support a variety of environments through a singular repository. For
-example, in this repository we already have React, Preact and HTML support.
+Elements supports integrating with:
+
+- React
+- Preact
+- ExpressJs (experimental)
 
 ## Getting Started
 
@@ -59,7 +63,7 @@ version.
 
 Below is an example of how you should add the pacakge.
 
-```package.json
+```json
 ...
 "@ory/elements": "*",
 ...
@@ -230,7 +234,6 @@ res.render("login", {
     title: !(flow.refresh || flow.requested_aal === "aal2")
       ? "Sign In"
       : "Two-Factor Authentication",
-    }),
     flow: flow as SelfServiceFlow,
     flowType: "login",
     cardImage: "ory-logo.svg",
